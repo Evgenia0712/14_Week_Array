@@ -46,17 +46,19 @@ console.log(filteredGradesBad.length);
 //    - Если оценка находится в диапазоне от 20 до 39, преобразуйте её в "D"<br>
 //    - Если оценка ниже 20, преобразуйте её в "E"
 
+///*
 function changeGrades(grades) {
   let el = '';
   let resultArray = [];
-  for (i = 0; i < 11; i++) {
-    if (80 <= grades[i] <= 100) {
+  let i;
+  for (i = 0; i <= 11; i++) {
+    if (80 <= grades[i] && grades[i] <= 100) {
       el = 'A';
-    } else if (60 <= grades[i] <= 79) {
+    } else if (60 <= grades[i] && grades[i] <= 79) {
       el = 'B';
-    } else if (40 <= grades[i] <= 59) {
+    } else if (40 <= grades[i] && grades[i] <= 59) {
       el = 'C';
-    } else if (20 <= grades[i] <= 39) {
+    } else if (20 <= grades[i] && grades[i] <= 39) {
       el = 'D';
     } else {
       el = 'E';
@@ -66,7 +68,7 @@ function changeGrades(grades) {
   return resultArray;
 }
 
-console.log(changeGrades());
+console.log(changeGrades(grades));
 
 
 const result1 = document.querySelector('.result1');
@@ -88,4 +90,4 @@ const result6 = document.querySelector('.result6');
 result6.textContent = filteredGradesBad.length;
 
 const result7 = document.querySelector('.result7');
-result7.textContent = grades;
+result7.textContent = changeGrades(grades);
